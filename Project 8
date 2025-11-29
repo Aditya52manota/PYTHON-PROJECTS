@@ -1,0 +1,18 @@
+#OpenAI Chat App
+import google.generativeai as genai
+
+API_KEY = "ENTER YOUR KEY"  
+
+genai.configure(api_key=API_KEY)
+
+model = genai.GenerativeModel("gemini-2.5-flash")
+
+while True:
+    user = input("Enter what you want to search or type exit to close: ")
+
+    if user.lower() == "exit":
+        print("bye bye")
+        break
+
+    response = model.generate_content(user)
+    print("bot:", response.text)
