@@ -1,0 +1,29 @@
+# Movie Ticket Booking
+seats = ["O", "O", "O", "O", "O"]
+ticket_price = 250
+
+def show_seats():
+    print("Seats: ", " ".join(seats))
+
+def book_ticket():
+    show_seats()
+    seat_aval = int(input("Choose a seat number (1-5): ")) - 1
+    if seats[seat_aval] == "X":
+        print ("Seat already booked!")
+    else:
+        seats [seat_aval] = "X"
+        print(f"Ticket booked! Price: RS{ticket_price}")
+
+print(" Welcome to Movie Booking")
+while True:
+    print("\n1. Show Seats\n2. Book Ticket\n3. Exit")
+    choice = input("Enter choice: ")
+    if choice == "1":
+        show_seats()
+    elif choice == "2":
+        book_ticket()
+    elif choice == "3":
+        print("Thanks for booking!")
+        break
+    else:
+        print("Invalid choice!")
