@@ -1,0 +1,11 @@
+#Calculator
+a= float(input("enter a number"))
+b=  float(input("enter a number"))
+sum=a+b
+sub=a-b
+multi=a*b
+div=a/b
+print("sum",sum)
+print("sub",sub)
+print("multi",multi)
+print("div",div)
