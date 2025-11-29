@@ -1,0 +1,28 @@
+#Text To Speech Tool
+import matplotlib.pyplot as plt
+import pyttsx3
+import speech_recognition as sr
+import pywhatkit
+import webbrowser
+import os
+
+speaker = pyttsx3.init()
+mic = sr.Recognizer()
+
+speaker.say("welcome Aditya ") 
+speaker.runAndWait()
+
+with sr.Microphone() as source:
+    print ("Start Speaking ..........")
+    try:
+        voice = mic.listen(source)
+        text = mic.recognize_google(voice) 
+        text = text.lower()  #
+        print("You said:", text)
+    except:
+        print("Could not understand voice or no internet.")
+        text = ""
+
+if "open notepad" in text:
+    print ("Opening Notepad...")
+    os.system("notepad")
